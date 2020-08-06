@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
+7. Gettin’ Cozy
 """
 
 
 def cat_matrices2D(mat1, mat2, axis=0):
     """
+    7. Gettin’ Cozy
     """
     res = []
     if axis == 0:

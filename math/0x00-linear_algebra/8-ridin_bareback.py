@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
+8. Ridin’ Bareback
 """
 
 
 def mat_mul(mat1, mat2):
     """
+    8. Ridin’ Bareback
     """
     res = []
     if len(mat1[0]) != len(mat2):
