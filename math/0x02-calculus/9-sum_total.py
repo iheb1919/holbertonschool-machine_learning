@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""lll"""
+
 def summation_i_squared(n):
     """sum """
     if n is None or n < 1:
