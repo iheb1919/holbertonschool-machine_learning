@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-python
+python poly derivative
 """
 
 
 def poly_derivative(poly):
-    """sd"""
+    """
+    poly derivative
+    """
     if type(poly) is not list:
         return(None)
     if len(poly) == 0:
