@@ -24,14 +24,27 @@ class Poisson():
                 raise TypeError("data must be a list")
 
     def pmf(self, k):
-        """ Calculates the PMF of the distribution.
+        """ Calculates the PMF.
         """
-        k2 = int(k)
-        if k2 < 0:
+        k = int(k)
+        if k < 0:
             return 0
         else:
             fact = 1
-            for i in range(1, x + 1):
+            for i in range(1, k + 1):
                 fact = fact * i
-                res = e ** -self.lambtha * self.lambtha ** x / x_fact
+
+            res = e ** -self.lambtha * self.lambtha ** k / fact
             return res
+
+    def cdf(self, k):
+        """ Calculates the CMD.
+        """
+        k = int(k)
+        if k < 0:
+            return 0
+
+        res = 0
+        for i in range(k + 1):
+            res += self.pmf(i)
+        return res
