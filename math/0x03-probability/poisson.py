@@ -22,11 +22,12 @@ class Poisson():
             else:
                 raise TypeError("data must be a list")
 
+
             def pmf(self, k):
                 """ Calculates the PMF of the distribution.
                 """
-                k = int(k)
-                if k < 0:
+                k2 = int(k)
+                if k2 < 0:
                     return 0
                 else:
                     fact = 1
