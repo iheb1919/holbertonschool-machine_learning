@@ -61,8 +61,8 @@ class Binomial():
         k = int(k)
         if k < 0:
             return 0
-        fac = factorial(int(self.n)) / (factorial(k)
-                                      * factorial(int(self.n) - k))
+        fac = factorial(int(self.n)) / (factorial(k) *
+                                        factorial(int(self.n) - k))
         return fac * (self.p ** k) * ((1 - self.p) ** (int(self.n) - k))
 
     def cdf(self, k):
