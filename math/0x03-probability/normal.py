@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-""" class normal"""
+""" Initialize Normal"""
 
-
-e = 2.7182818285
 pi = 3.1415926536
+e = 2.7182818285
 
 
 class Normal():
-    """ Class to calculate Normal distribution"""
+    """ class Normal that represents a normal distribution"""
 
     def __init__(self, data=None, mean=0, stddev=1.):
-        """Constructor of Normal
-        """
+        """Constructor"""
         self.stddev = float(stddev)
         self.mean = float(mean)
         if data is None:
@@ -32,29 +30,22 @@ class Normal():
                 raise TypeError("data must be a list")
 
     def z_score(self, x):
-        """ Calculates z score.
-      """
+        """ normalize normal"""
         return (x - self.mean) / self.stddev
 
     def x_value(self, z):
-        """ calculates x_value
-        """
+        """x_value"""
         return z * self.stddev + self.mean
 
     def pdf(self, x):
-        """ Calculates pdf distribution function
-        """
-        exponente = (((x - self.mean) / self.stddev) ** 2) * -0.5
-        denominador = self.stddev * ((2 * pi) ** 0.5)
-        pdf = (1 / denominador) * (e ** exponente)
-        return pdf
+        """normal PDF"""
+        p = (self.z_score(x)) ** 2
+        return (1 / (self.stddev * ((2 * pi)**0.5)) * (e ** ((-0.5) * p)))
 
     def cdf(self, x):
-        """ Calculates cdf distribution function
-        """
-        aux = (x - self.mean) / (self.stddev * (2 ** 0.5))
-        erf = (2 / (pi ** 0.5)) * \
-              (aux - (aux ** 3) / 3 + (aux ** 5) / 10 - (aux ** 7) / 42 +
-               (aux ** 9) / 216)
-        cdf = (0.5) * (1 + erf)
+        """ normal cdf"""
+        xx = (self.z_score(x)) / (2 ** 0.5)
+        xxx = (2 / (pi ** 0.5)) * (xx - (xx ** 3) / 3 + (xx ** 5) / 10 -
+                                   (xx ** 7) / 42 + (xx ** 9) / 216)
+        cdf = (0.5) * (1 + xxx)
         return cdf
