@@ -3,6 +3,7 @@
 
 e = 2.7182818285
 
+
 class Poisson():
     """ calculate Poisson distribution"""
 
@@ -22,16 +23,15 @@ class Poisson():
             else:
                 raise TypeError("data must be a list")
 
-
-            def pmf(self, k):
-                """ Calculates the PMF of the distribution.
-                """
-                k2 = int(k)
-                if k2 < 0:
-                    return 0
-                else:
-                    fact = 1
-                    for i in range(1, x + 1):
-                        fact = fact * i
-                        res = e ** -self.lambtha * self.lambtha ** x / x_fact
-                    return res
+    def pmf(self, k):
+        """ Calculates the PMF of the distribution.
+        """
+        k2 = int(k)
+        if k2 < 0:
+            return 0
+        else:
+            fact = 1
+            for i in range(1, x + 1):
+                fact = fact * i
+                res = e ** -self.lambtha * self.lambtha ** x / x_fact
+            return res
