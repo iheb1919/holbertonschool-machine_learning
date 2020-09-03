@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+
 def poly_integral(poly, C=0):
     """ poly_integral"""
-    res =[C]
+    res = [C]
     for i in range(len(poly)):
         inte = (poly[i] ** i) / (i + 1)
         if i == 0:
